@@ -3,11 +3,11 @@ if game.PlaceId ~= 2809202155 then
     Folder.Name = "Item_Spawns"
     local Folder2 = Instance.new("Folder", Folder)
     Folder2.Name = "Items"
-    local Players =  game:GetService("Players")
-    player = Players.LocalPlayer
-    useridsigma = player.UserId
 end
 
+local Players =  game:GetService("Players")
+player = Players.LocalPlayer
+useridsigma = player.UserId
 
 
 local MapFolder = Instance.new("Folder", workspace)
