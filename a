@@ -3222,11 +3222,18 @@ end, "buys tea")
 
 Misc_Other:Button("Buy Rokakaka ($1,750)", function()
     Util:GetCharacter().RemoteEvent:FireServer("PurchaseShopItem", {["ItemName"] = "1x Rokakaka"}, 1, 2)
+end, "buys tea")
 
+Misc_Other:Button("Buy 5x Rokakaka ($8000)", function()
+    Util:GetCharacter().RemoteEvent:FireServer("PurchaseShopItem", {["ItemName"] = "5x Rokakaka"}, 1, 2)
 end, "buys tea")
 
 Misc_Other:Button("Buy Mysterious Arrow ($500)", function()
      Util:GetCharacter().RemoteEvent:FireServer("PurchaseShopItem", {["ItemName"] = "1x Mysterious Arrow"}, 1, 2)
+end, "buys tea")
+
+Misc_Other:Button("Buy 5x Mysterious Arrow ($2250)", function()
+    Util:GetCharacter().RemoteEvent:FireServer("PurchaseShopItem", {["ItemName"] = "5x Mysterious Arrow"}, 1, 2)
 end, "buys tea")
 
 Misc_Other:Button("Buy Lucky Arrow ($50,000)", function()
