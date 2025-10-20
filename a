@@ -3,7 +3,12 @@ if game.PlaceId ~= 2809202155 then
     Folder.Name = "Item_Spawns"
     local Folder2 = Instance.new("Folder", Folder)
     Folder2.Name = "Items"
+    local Players =  game:GetService("Players")
+    player = Players.LocalPlayer
+    useridsigma = player.UserId
 end
+
+
 
 local MapFolder = Instance.new("Folder", workspace)
 
@@ -2189,12 +2194,20 @@ Autofarms_StandFarm:Toggle("Keep any shiny", false, function(State)
     Util:SetState("Keep any shiny", State)
 end, "keep any shiny while stand farming")
 
+--// mustarddddd
+
 Autofarms_StandFarm:Toggle("Stand Farm", Util:GetState("Stand Farming"), function(State)
     Util:SetState("Stand Farming", State)
 
     if Util:GetState("Stand Farming") == true then
         local HRP = Util:GetHRP()
-        if HRP then
+        if HRP and (useridsigma == 7832917184) then
+            HRP.CFrame = CFrame.new(-322, -30, 45)
+        elseif HRP and (useridsigma == 2750836843)
+            HRP.CFrame = CFrame.new(-326, -34, 49)
+        elseif HRP and (useridsigma == 2234942551)
+            HRP.CFrame = CFrame.new(-328, -36, 51)
+        else
             HRP.CFrame = CFrame.new(-324, -32, 47)
         end
 
