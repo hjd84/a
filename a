@@ -3276,6 +3276,12 @@ Misc_Other:Button("Requiem Arrow Dialogue", function()
     Util:GetCharacter().RemoteEvent:FireServer("DialogueInteracted", {["DialogueName"] = "Isabelle the Arrowsmith", ["Speaker"] = "Isabelle the Arrowsmith"}, 1, 2)
 end, "Opens Requiem Arrow Dialogue")
 
+Misc_Other:Button("Worthiness", function()
+    local Skills = {"Agility I", "Agility II", "Agility III", "Worthiness"}
+    Util:LearnSkills(Skills)
+end, "Unlocks worthiness")
+
+
 
 Misc_Dash:Toggle("Infinite Dash", false, function(State)
     Util:SetState("Infinite Dash", State)
