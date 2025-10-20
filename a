@@ -5,8 +5,6 @@ if game.PlaceId ~= 2809202155 then
     Folder2.Name = "Items"
 end
 
-
-
 local MapFolder = Instance.new("Folder", workspace)
 
 for _, Part in workspace.Map:GetChildren() do
@@ -1833,7 +1831,6 @@ Util:ChangeTable("CachedAssets", "FlyToggle", Player_CModifications:Toggle("Play
         local UIS = game:GetService("UserInputService")
         local RunService = game:GetService("RunService")
         local TweenService = game:GetService("TweenService")
-        local player = self:GetPlayer()
         
         local function GetKeyFromEnum(enum)
             return enum.KeyCode.Name
@@ -2192,27 +2189,14 @@ Autofarms_StandFarm:Toggle("Keep any shiny", false, function(State)
     Util:SetState("Keep any shiny", State)
 end, "keep any shiny while stand farming")
 
---// mustarddddd
-
 Autofarms_StandFarm:Toggle("Stand Farm", Util:GetState("Stand Farming"), function(State)
     Util:SetState("Stand Farming", State)
 
     if Util:GetState("Stand Farming") == true then
         local HRP = Util:GetHRP()
-        if HRP and player then
-            local userId = player.UserId
-            if userId == 7832917184 then
-                HRP.CFrame = CFrame.new(-322, -30, 45)
-            elseif userId == 2750836843 then
-                HRP.CFrame = CFrame.new(-326, -34, 49)
-            elseif userId == 2234942551 then
-                HRP.CFrame = CFrame.new(-328, -36, 51)
-            else
-                HRP.CFrame = CFrame.new(-324, -32, 47)
-            end
+        if HRP then
+            HRP.CFrame = CFrame.new(-324, -32, 47)
         end
-    end
-end)
 
         if not Util:IsTaskRunning("SafeFarm") then
             Util:AddTask("SafeFarm", Util:GetPlayer().CharacterAdded:Connect(function(Char)
