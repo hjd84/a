@@ -2378,6 +2378,11 @@ Autofarms_StandFarm:Button("Requiem Arrow Dialogue", function()
     Util:GetCharacter().RemoteEvent:FireServer("DialogueInteracted", {["DialogueName"] = "Isabelle the Arrowsmith", ["Speaker"] = "Isabelle the Arrowsmith"}, 1, 2)
 end, "Opens Requiem Arrow Dialogue")
 
+Autofarms_StandFarm:Button("Worthiness", function()
+    local Skills = {"Agility I", "Agility II", "Agility III", "Worthiness"}
+    Util:LearnSkills(Skills)
+end, "Unlocks worthiness")
+
 Util:Log("Xenon Debug - Passed Stand Farm Section")
 --// Autofarm (1020 for ctrl + f)
 local Autofarms_ShinyFarm = Autofarms:Section("Shiny Farm Settings")
