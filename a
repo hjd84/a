@@ -2366,6 +2366,18 @@ for i,v in pairs(Util:GetTable("AllStands")) do
     end, ("Adds " .. v .. " to the stand farming list."))
 end
 
+Autofarms_StandFarm:Button("Buy 5x Rokakaka ($8000)", function()
+    Util:GetCharacter().RemoteEvent:FireServer("PurchaseShopItem", {["ItemName"] = "5x Rokakaka"}, 1, 2)
+end, "buys tea")
+
+Autofarms_StandFarm:Button("Buy 5x Mysterious Arrow ($2250)", function()
+    Util:GetCharacter().RemoteEvent:FireServer("PurchaseShopItem", {["ItemName"] = "5x Mysterious Arrow"}, 1, 2)
+end, "buys tea")
+
+Autofarms_StandFarm:Button("Requiem Arrow Dialogue", function()
+    Util:GetCharacter().RemoteEvent:FireServer("DialogueInteracted", {["DialogueName"] = "Isabelle the Arrowsmith", ["Speaker"] = "Isabelle the Arrowsmith"}, 1, 2)
+end, "Opens Requiem Arrow Dialogue")
+
 Util:Log("Xenon Debug - Passed Stand Farm Section")
 --// Autofarm (1020 for ctrl + f)
 local Autofarms_ShinyFarm = Autofarms:Section("Shiny Farm Settings")
