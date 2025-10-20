@@ -1494,7 +1494,9 @@ Util:AddValues{
             "Dead Experience",
             "Undead Hand",
             "Undead Flare",
-            "Bloodthirster"
+            "Bloodthirster",
+			"Arlong",
+			"Hidden Leaf Hero"
         };
         AllTeleports = {
             ["Newbie Giorno"] = CFrame.new(1, 0, -697);
