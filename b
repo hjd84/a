@@ -2195,13 +2195,13 @@ Autofarms_StandFarm:Toggle("Stand Farm", Util:GetState("Stand Farming"), functio
     if Util:GetState("Stand Farming") == true then
         local HRP = Util:GetHRP()
         if HRP then
-            HRP.CFrame = CFrame.new(-400, -32, 47)
+            HRP.CFrame = CFrame.new(-654, 16, -306)
         end
 
         if not Util:IsTaskRunning("SafeFarm") then
             Util:AddTask("SafeFarm", Util:GetPlayer().CharacterAdded:Connect(function(Char)
                     task.wait(0.15)
-                    Char.PrimaryPart.CFrame = CFrame.new(-400, -32, 47)
+                    Char.PrimaryPart.CFrame = CFrame.new(-654, 16, -306)
             end))
         end
     else
