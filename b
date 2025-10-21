@@ -2374,9 +2374,17 @@ Autofarms_StandFarm:Button("Buy 5x Mysterious Arrow ($2250)", function()
     Util:GetCharacter().RemoteEvent:FireServer("PurchaseShopItem", {["ItemName"] = "5x Mysterious Arrow"}, 1, 2)
 end, "buys tea")
 
-Autofarms_StandFarm:Button("Requiem Arrow Dialogue", function()
-    Util:GetCharacter().RemoteEvent:FireServer("DialogueInteracted", {["DialogueName"] = "Isabelle the Arrowsmith", ["Speaker"] = "Isabelle the Arrowsmith"}, 1, 2)
-end, "Opens Requiem Arrow Dialogue")
+Autofarms_StandFarm:Button("Requiem Arrow", function()
+    local args = {
+        "EndDialogue",
+        {
+            Option = "Option1",
+            Dialogue = "Dialogue4",
+            NPC = "Isabelle the Arrowsmith"
+        }
+    }
+    game:GetService("Players").LocalPlayer.Character:WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end, "buys tea")
 
 Autofarms_StandFarm:Button("Worthiness", function()
     local Skills = {"Agility I", "Agility II", "Agility III", "Worthiness"}
@@ -3289,9 +3297,17 @@ Misc_Other:Button("Halloween Jack Dialogue", function()
     Util:GetCharacter().RemoteEvent:FireServer("PromptTriggered", game.ReplicatedStorage.NewDialogue:FindFirstChild("Halloween Event"))
 end, "Opens Jesus dialogue.")
 
-Misc_Other:Button("Requiem Arrow Dialogue", function()
-    Util:GetCharacter().RemoteEvent:FireServer("DialogueInteracted", {["DialogueName"] = "Isabelle the Arrowsmith", ["Speaker"] = "Isabelle the Arrowsmith"}, 1, 2)
-end, "Opens Requiem Arrow Dialogue")
+Misc_Other:Button("Requiem Arrow", function()
+    local args = {
+        "EndDialogue",
+        {
+            Option = "Option1",
+            Dialogue = "Dialogue4",
+            NPC = "Isabelle the Arrowsmith"
+        }
+    }
+    game:GetService("Players").LocalPlayer.Character:WaitForChild("RemoteEvent"):FireServer(unpack(args))
+end, "buys tea")
 
 Misc_Other:Button("Worthiness", function()
     local Skills = {"Agility I", "Agility II", "Agility III", "Worthiness"}
